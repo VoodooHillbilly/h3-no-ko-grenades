@@ -1,9 +1,356 @@
 {
-	"$schema": "https://raw.githubusercontent.com/atampy25/simple-mod-framework/main/Mod%20Manager/src/lib/manifest-schema.json",
-	"version": "0.1.0",
-	"id": "YourPreferredAlias.AnIDForTheMod",
-	"name": "Test Mod",
-	"description": "A truly amazing mod",
-	"authors": ["Your Preferred Alias"],
-	"frameworkVersion": "2.25.1"
+	"id": "voodoohillbilly.h3-no-ko-grenades",
+	"name": "No KO Grenades",
+	"description": "Modify thrown grenades, impact explosives, and a couple of mines to either knock down NPCs or disable lock-on entirely. Has an option to disable dropping impact explosives.",
+	"authors": [
+		"Voodoo Hillbilly"
+	],
+	"version": "0.3.2",
+	"frameworkVersion": "2.33.9",
+	"updateCheck": "https://github.com/VoodooHillbilly/h3-no-ko-grenades/releases/latest/download/updates.json",
+	"options": [
+		{
+			"name": "Playing Online",
+			"tooltip": "Needs to be checked to work online. If you enable this and use the Peacock server, you need to also install https://github.com/thepeacockproject/peacock-strings for Peacock’s text to display properly.",
+			"type": "checkbox",
+			"enabledByDefault": true,
+			"thumbs": [
+				"ConsoleCmd OnlineResources_Disable 1"
+			]
+		},
+		{
+			"name": "Don't Drop the Nitro",
+			"tooltip": "Disables dropping the Explosive Baseball, Explosive Golf Ball, Explosive Snow Globe, ICA Impact Explosive, Molotov Cocktail, Nitroglycerin, and Octane Booster.",
+			"type": "checkbox",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/impact/undroppable"
+			]
+		},
+		{
+			"group": "Concussion Grenade",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "Concussion Grenade",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/grenade/concussion/throw_knockdown"
+			]
+		},
+		{
+			"group": "Concussion Grenade",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing.",
+			"type": "select",
+			"contentFolders": [
+				"content/grenade/concussion/throw_normal"
+			]
+		},
+		{
+			"group": "Flash Grenades",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "Flash Grenades",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/grenade/flash/throw_knockdown"
+			]
+		},
+		{
+			"group": "Flash Grenades",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing.",
+			"type": "select",
+			"contentFolders": [
+				"content/grenade/flash/throw_normal"
+			]
+		},
+		{
+			"group": "Frag Grenade",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "Frag Grenade",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/grenade/frag/throw_knockdown"
+			]
+		},
+		{
+			"group": "Frag Grenade",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing.",
+			"type": "select",
+			"contentFolders": [
+				"content/grenade/frag/throw_normal"
+			]
+		},
+		{
+			"group": "Emetic Grenade",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "Emetic Grenade",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/grenade/emetic/throw_knockdown"
+			]
+		},
+		{
+			"group": "Emetic Grenade",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing.",
+			"type": "select",
+			"contentFolders": [
+				"content/grenade/emetic/throw_normal"
+			]
+		},
+		{
+			"group": "Emetic Frog Grenade",
+			"name": "Off",
+			"tooltip": "Don't affect the default throw that doesn't lock-on to NPCs.",
+			"type": "select",
+			"enabledByDefault": true
+		},
+		{
+			"group": "Emetic Frog Grenade",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown.",
+			"type": "select",
+			"contentFolders": [
+				"content/grenade/frog/throw_knockdown"
+			]
+		},
+		{
+			"group": "Emetic Frog Grenade",
+			"name": "Knock Out",
+			"tooltip": "Change the lock-on to knock out NPCs when thrown.",
+			"type": "select",
+			"contentFolders": [
+				"content/grenade/frog/throw_pacify"
+			]
+		},
+		{
+			"group": "Guru's Emetic Grenade",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "Guru's Emetic Grenade",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown. This also changes the Handover version in Freelancer.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/grenade/guru/throw_knockdown"
+			]
+		},
+		{
+			"group": "Guru's Emetic Grenade",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing. This also changes the Handover version in Freelancer.",
+			"type": "select",
+			"contentFolders": [
+				"content/grenade/guru/throw_normal"
+			]
+		},
+		{
+			"group": "Explosive Balls",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs. Includes the Explosive Baseball, Explosive Golf Ball, Explosive Snow Globe, and ICA Impact Explosive.",
+			"type": "select"
+		},
+		{
+			"group": "Explosive Balls",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown. Includes the Explosive Baseball, Explosive Golf Ball, Explosive Snow Globe, and ICA Impact Explosive.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/impact/balls/throw_knockdown"
+			]
+		},
+		{
+			"group": "Explosive Balls",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing. Includes the Explosive Baseball, Explosive Golf Ball, Explosive Snow Globe, and ICA Impact Explosive.",
+			"type": "select",
+			"contentFolders": [
+				"content/impact/balls/throw_normal"
+			]
+		},
+		{
+			"group": "Magnesium Pouch",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "Magnesium Pouch",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/impact/magnesium_pouch/throw_knockdown"
+			]
+		},
+		{
+			"group": "Magnesium Pouch",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing.",
+			"type": "select",
+			"contentFolders": [
+				"content/impact/magnesium_pouch/throw_normal"
+			]
+		},
+		{
+			"group": "Molotov Cocktail",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that kills NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "Molotov Cocktail",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/impact/molotov/throw_knockdown"
+			]
+		},
+		{
+			"group": "Molotov Cocktail",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing.",
+			"type": "select",
+			"contentFolders": [
+				"content/impact/molotov/throw_normal"
+			]
+		},
+		{
+			"group": "Nitroglycerin and Octane Booster",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "Nitroglycerin and Octane Booster",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/impact/nitroglycerin/throw_knockdown"
+			]
+		},
+		{
+			"group": "Nitroglycerin and Octane Booster",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing.",
+			"type": "select",
+			"contentFolders": [
+				"content/impact/nitroglycerin/throw_normal"
+			]
+		},
+		{
+			"group": "Shaman Powder",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "Shaman Powder",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/impact/shaman/throw_knockdown"
+			]
+		},
+		{
+			"group": "Shaman Powder",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing.",
+			"type": "select",
+			"contentFolders": [
+				"content/impact/shaman/throw_normal"
+			]
+		},
+		{
+			"group": "Goldbrick Proximity Mine",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "Goldbrick Proximity Mine",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/proximity/goldbrick_snail/throw_knockdown"
+			]
+		},
+		{
+			"group": "Goldbrick Proximity Mine",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing.",
+			"type": "select",
+			"contentFolders": [
+				"content/proximity/goldbrick_snail/throw_normal"
+			]
+		},
+		{
+			"group": "The Roar Flash Grenade",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "The Roar Flash Grenade",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": [
+				"content/proximity/flash_roar/throw_knockdown"
+			]
+		},
+		{
+			"group": "The Roar Flash Grenade",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing.",
+			"type": "select",
+			"contentFolders": [
+				"content/proximity/flash_roar/throw_normal"
+			]
+		}
+	]
 }
