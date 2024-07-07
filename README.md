@@ -4,7 +4,7 @@ A Hitman: World of Assassination mod that customizes grenade lock-on.
 
 ## Features
 
-Modify thrown grenades, impact explosives, and a couple of mines to either knock down NPCs or disable lock-on entirely.
+Modify thrown grenades, impact explosives, the durian, and a couple of mines to either knock down NPCs or disable lock-on entirely.
 
 Has an option to disable dropping the impact explosive balls, Molotov, Nitroglycerin, and Octane Booster. Helpful for clumsy fingers.
 
