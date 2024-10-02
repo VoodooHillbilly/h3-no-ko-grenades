@@ -148,6 +148,27 @@
 			"contentFolders": ["content/grenade/guru/throw_normal"]
 		},
 		{
+			"group": "Chloroform Flask",
+			"name": "Off",
+			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "Chloroform Flask",
+			"name": "Knock Down",
+			"tooltip": "Change the lock-on to only knock down NPCs when thrown.",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": ["content/impact/chloroform/throw_knockdown"]
+		},
+		{
+			"group": "Chloroform Flask",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing.",
+			"type": "select",
+			"contentFolders": ["content/impact/chloroform/throw_normal"]
+		},
+		{
 			"group": "Durian",
 			"name": "Off",
 			"tooltip": "Don't affect the default lock-on throw that knocks out NPCs.",
