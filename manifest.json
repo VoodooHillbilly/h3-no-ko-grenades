@@ -3,7 +3,7 @@
 	"name": "No KO Grenades",
 	"description": "Modify thrown grenades, impact explosives, the durian, and a couple of mines to either knock down NPCs or disable lock-on entirely. Has an option to disable dropping impact explosives.",
 	"authors": ["Voodoo Hillbilly"],
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"frameworkVersion": "2.33.20",
 	"updateCheck": "https://github.com/VoodooHillbilly/h3-no-ko-grenades/releases/latest/download/updates.json",
 	"options": [
