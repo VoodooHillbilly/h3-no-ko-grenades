@@ -335,6 +335,27 @@
 			"tooltip": "Remove the lock-on when throwing.",
 			"type": "select",
 			"contentFolders": ["content/proximity/flash_roar/throw_normal"]
+		},
+		{
+			"group": "Newspaper",
+			"name": "Off",
+			"enabledByDefault": true,
+			"tooltip": "Don't affect the default lock-on throw that knocks down NPCs.",
+			"type": "select"
+		},
+		{
+			"group": "Newspaper",
+			"name": "Knock Out",
+			"tooltip": "Change the lock-on to knock out NPCs when thrown.",
+			"type": "select",
+			"contentFolders": ["content/melee/newspaper/throw_pacify"]
+		},
+		{
+			"group": "Newspaper",
+			"name": "No Lock-On",
+			"tooltip": "Remove the lock-on when throwing.",
+			"type": "select",
+			"contentFolders": ["content/melee/newspaper/throw_normal"]
 		}
 	]
 }

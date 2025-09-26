@@ -8,6 +8,8 @@ Modify thrown grenades, impact explosives, the durian, and a couple of mines to 
 
 Has an option to disable dropping the impact explosive balls, Molotov, Nitroglycerin, and Octane Booster. Helpful for clumsy fingers.
 
+Has an option to restore the knockout ability of newspapers.
+
 Has an option to enable online use.
 
 -   If you enable this and use the Peacock server, you need to also install [Peacock Strings](https://github.com/thepeacockproject/peacock-strings "Peacock Strings") for Peacock’s text to display properly.
